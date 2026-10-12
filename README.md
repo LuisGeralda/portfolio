@@ -1,5 +1,7 @@
 # Luis Geralda portfolio
 
+[Visit the live portfolio](https://luisgeralda.github.io/portfolio/)
+
 An editorial engineering portfolio for interviews. Six case studies appear in reverse chronological order by latest documented work. Static HTML works without JavaScript; JavaScript adds filtering, theme selection, and an illustrative protocol walkthrough.
 
 ## Preview
@@ -19,7 +21,7 @@ Open http://127.0.0.1:4173. There are no npm dependencies to install.
 2. In the repository's **Settings → Pages → Build and deployment**, select **GitHub Actions**.
 3. Run the **Publish portfolio** workflow, or push to `main`. Its deployment result supplies the final URL.
 
-A `portfolio` repository typically publishes at `https://luisgeralda.github.io/portfolio/`. A repository named `LuisGeralda.github.io` publishes at the account root. All local asset paths are relative and support either layout. The current build does not assert either URL is deployed.
+This repository publishes at `https://luisgeralda.github.io/portfolio/`. A repository named `LuisGeralda.github.io` would publish at the account root. All local asset paths are relative and support either layout.
 
 Alternatively, publish `site/` directly from a Pages branch. `.nojekyll` keeps the static output unprocessed.
 
