@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.1.0] - 2026-10-12
+
+### Changed
+
+- Introduce Luis by name, role, and 5+ years of experience.
+- Use direct project, experience, and contact headings.
+- Describe DTLog's input as UE baseband log captures.
+- Identify Corning as ex-SpiderCloud Wireless.
+
+### Removed
+
+- QCAT mobility analyzer, promotional copy, architecture sketches, interview prompts, and the illustrative protocol walkthrough.
+
 ## [1.0.0.0] - 2026-10-12
 
 ### Added

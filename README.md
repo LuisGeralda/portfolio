@@ -2,7 +2,7 @@
 
 [Visit the live portfolio](https://luisgeralda.github.io/portfolio/)
 
-An editorial engineering portfolio for interviews. Six case studies appear in reverse chronological order by latest documented work. Static HTML works without JavaScript; JavaScript adds filtering, theme selection, and an illustrative protocol walkthrough.
+An engineering portfolio for interviews. Five projects appear in reverse chronological order by latest documented work. Static HTML works without JavaScript; JavaScript adds project filtering and theme selection.
 
 ## Preview
 
@@ -37,7 +37,7 @@ Run `npm run check` and `npm run build` after edits. Source and generated HTML a
 
 ## Content and access
 
-Project dates are latest documented activity, not original creation dates. Private repositories are described with public-facing case studies and have no inaccessible source-code CTA. The site contains no source code from those projects, customer captures, real measurement dashboards, or employer configuration exports. Architecture sketches and the protocol sequence are explicitly illustrative.
+Project dates are latest documented activity, not original creation dates. Private repositories are described with public-facing case studies and have no inaccessible source-code CTA. The site contains no source code from those projects, customer captures, real measurement dashboards, or employer configuration exports. Project summaries and details focus on the implementation and limitations.
 
 Typography uses Instrument Serif, Inter, and Geist Mono through Google Fonts, with system fallbacks. No commercial font files are redistributed. The resume contains the contact and employment information supplied by Luis for this portfolio.
 
