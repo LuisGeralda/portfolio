@@ -39,32 +39,3 @@ themeButton.addEventListener('click', () => {
   setTheme(theme);
   try { localStorage.setItem('portfolio-theme', theme); } catch {}
 });
-
-const traces = {
-  access: {
-    lane: 'Core / EPC',
-    messages: [['forward','RRCConnectionRequest'],['reverse','RRCConnectionSetup'],['forward decisive','RRCConnectionSetupComplete + NAS'],['downstream','S1AP Initial UE Message']],
-    note: 'Correlate the request, setup, and completion as one procedure. Retransmissions are not new access attempts. RRC setup alone does not prove that NAS registration completed.'
-  },
-  handover: {
-    lane: 'Target eNB',
-    messages: [['forward','MeasurementReport'],['downstream','X2AP Handover Request'],['reverse decisive','RRCConnectionReconfiguration'],['return-target','RRCConnectionReconfigurationComplete']],
-    note: 'For this simplified LTE X2 handover, preparation precedes the RRC command. Resolve the measurement report against its active configuration, verify that it includes the commanded target, and look for completion at the target. A measurement report alone does not prove handover success.'
-  }
-};
-document.querySelector('#trace-controls').hidden = false;
-const traceButtons = [...document.querySelectorAll('[data-trace]')];
-const traceCaption = document.querySelector('#trace-caption');
-traceCaption.setAttribute('aria-live','polite');
-traceButtons.forEach(button => button.addEventListener('click', () => {
-  const trace = traces[button.dataset.trace];
-  traceButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
-  document.querySelector('#third-lane').textContent = trace.lane;
-  const container = document.querySelector('#trace-messages');
-  container.replaceChildren(...trace.messages.map(([direction, label]) => {
-    const row = document.createElement('div'); row.className = `trace-message ${direction}`;
-    const text = document.createElement('span'); text.textContent = label;
-    row.append(text, document.createElement('i')); return row;
-  }));
-  traceCaption.querySelector('p').textContent = trace.note;
-}));

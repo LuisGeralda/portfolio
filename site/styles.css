@@ -19,3 +19,21 @@
 .hero-detail,.section-top p,.project-summary,.case-grid p,.boundary p,.archive p,.trace-copy>p:not(.trace-disclaimer),.trace-caption p,.career-row .career-note,.background-aside p,.contact-grid p{font-size:16px}
 @media print{nav,.filter-row,.trace-controls,.primary-link,.theme-toggle{display:none!important}:root{--margin:0px;--paper:white;--paper2:#f4f2ee;--ink:#111;--graphite:#555;--rule:#ccc}.wrap{padding-inline:0}.hero-grid{padding-block:24px}.hero-footer,.project-figure{display:none}.section-top{margin-bottom:24px}.work,.method,.experience{padding-top:32px}.project{padding-block:20px}.project-main{grid-column:3/13}details .case-study{display:block}.contact{margin-top:32px}.contact h2{font-size:48px}.site-header{height:64px}h1{font-size:56px}h2{font-size:36px}.project,section{break-inside:avoid}a{color:#111}}
 @media print{:root[data-theme=dark]{--paper:white;--paper2:#f4f2ee;--ink:#111;--graphite:#555;--rule:#ccc;color-scheme:light}}
+
+/* Compact, factual introduction and project list. */
+.hero{border-top:1px solid var(--rule)}
+.hero-grid{display:block;padding-block:48px}
+.hero-copy{max-width:800px}
+.hero-copy h1{font-size:64px;margin-bottom:16px}
+.hero-detail{max-width:680px}
+.work{padding-top:24px}
+.section-top{margin-bottom:32px}
+.project-main{grid-column:3/11}
+.project-summary{max-width:70ch}
+.case-grid{grid-template-columns:1fr 1fr;gap:24px 32px}
+.contact h2{font-size:48px}
+.contact{margin-top:56px}
+.contact-grid{margin-top:16px}
+.email-link{margin-top:0}
+@media(max-width:767px){.hero-grid{padding-block:32px}.hero-copy h1{font-size:48px}.work{padding-top:16px}.project-main{grid-column:1/5}.case-grid{grid-template-columns:1fr}.contact h2{font-size:40px}.contact{margin-top:40px}}
+@media print{.project-main{grid-column:3/13}}
