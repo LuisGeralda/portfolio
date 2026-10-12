@@ -1,5 +1,203 @@
 [
   {
+    "id": "eca",
+    "title": "Extended Cellular Analyzer (ECA)",
+    "category": "Protocol",
+    "date": "2026",
+    "displayDate": "Oct 2025–2026",
+    "kind": "Desktop application",
+    "role": "Team lead · F2G Solutions",
+    "summary": "Monitor cellular RF measurements, decode UE baseband log captures, and review signaling and drive-test sessions across LTE, NR, WCDMA, and GSM.",
+    "stack": [
+      "Python",
+      "TShark",
+      "ADB / DIAG",
+      "SQLite"
+    ],
+    "details": [
+      [
+        "Role",
+        "I led this project within my team. Development started in October 2025 and continued in 2026."
+      ],
+      [
+        "Project scope",
+        "Live device capture and offline PCAP analysis, GPS mapping, protocol inspection, and CSV/Excel exports."
+      ]
+    ],
+    "limit": "The public overview describes Windows support and one connected device at a time; simultaneous multi-device capture is planned.",
+    "overview": "https://landing-page-eca.netlify.app/",
+    "repo": null,
+    "visual": {
+      "src": "assets/projects/eca-signaling.webp",
+      "width": 1366,
+      "height": 729,
+      "alt": "ECA signaling message list and decoded protocol detail.",
+      "caption": "Live signaling capture with message-level protocol inspection.",
+      "source": "https://landing-page-eca.netlify.app/"
+    },
+    "impact": "Used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia."
+  },
+  {
+    "id": "mobiq",
+    "title": "MOBIQ",
+    "category": "Automation",
+    "date": "2026",
+    "displayDate": "Oct 2025–2026",
+    "kind": "Test automation platform",
+    "role": "Team lead · F2G Solutions",
+    "summary": "Coordinate Android devices and run repeatable telecom test campaigns through reusable modules and visual workflows.",
+    "stack": [
+      "Python",
+      "ADB",
+      "Android"
+    ],
+    "details": [
+      [
+        "Role",
+        "I led this project within my team. Development started in October 2025 and continued in 2026."
+      ],
+      [
+        "Project scope",
+        "RF logging, airplane-mode actions, data and network checks, multi-device orchestration, execution retries, and report exports."
+      ]
+    ],
+    "limit": "Requires Android devices connected through ADB. Campaign execution depends on device connectivity and the configured test modules.",
+    "overview": "https://landing-page-mobiq.netlify.app/",
+    "repo": null,
+    "visual": {
+      "src": "assets/projects/mobiq-workflows.webp",
+      "width": 1370,
+      "height": 891,
+      "alt": "MOBIQ workflow list showing reusable telecom action sequences.",
+      "caption": "Reusable workflows combine device actions into repeatable test sequences.",
+      "source": "https://landing-page-mobiq.netlify.app/"
+    },
+    "impact": "Used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia."
+  },
+  {
+    "id": "drive-test-dashboard",
+    "title": "Drive Test Dashboard",
+    "category": "RAN",
+    "date": "2026",
+    "displayDate": "Oct 2025–2026",
+    "kind": "Browser application",
+    "role": "Team lead · F2G Solutions",
+    "summary": "Visualize drive-test CSV data as KPI charts and mapped routes, with annotations and exports for network reviews.",
+    "stack": [
+      "JavaScript",
+      "Leaflet",
+      "CSV / JSON"
+    ],
+    "details": [
+      [
+        "Role",
+        "I led this project within my team. Development started in October 2025 and continued in 2026."
+      ],
+      [
+        "Project scope",
+        "Multi-RAT KPI views, map overlays, chart comparisons, regression trendlines, saved layouts, and PNG/SVG exports."
+      ]
+    ],
+    "limit": "Runs in the browser. Analysis depends on the uploaded measurements and CSV columns; charts alone do not establish a network fault.",
+    "overview": "https://f2g-dashboard.netlify.app/",
+    "repo": null,
+    "visual": {
+      "src": "assets/projects/drive-test-kpis.webp",
+      "width": 1285,
+      "height": 621,
+      "alt": "Drive Test Dashboard comparing signal level, signal quality, and downlink throughput.",
+      "caption": "KPI charts share a timeline with the selected measurement shown alongside.",
+      "source": "https://f2g-dashboard.netlify.app/"
+    }
+  },
+  {
+    "id": "eca-mobile",
+    "title": "ECA Mobile",
+    "category": "RAN",
+    "date": "2026",
+    "displayDate": "Oct 2025–2026",
+    "kind": "Android application",
+    "role": "Team lead · F2G Solutions",
+    "summary": "Collect LTE and NR radio measurements on Android, map drive-test routes, and run connectivity and throughput probes in the field.",
+    "stack": [
+      "Kotlin",
+      "Jetpack Compose",
+      "Android telephony",
+      "GPS",
+      "iPerf3",
+      "CSV / KML / GPX"
+    ],
+    "details": [
+      [
+        "Role",
+        "I led this project within my team. Development started in October 2025 and continued in 2026."
+      ],
+      [
+        "Project scope",
+        "Live RF values, neighbor-cell information, route logging, ping and throughput tests, Samsung modem-log import, and session exports."
+      ],
+      [
+        "Implementation",
+        "The application uses Android telephony APIs to collect available RSRP, RSRQ, SINR, PCI, cell identity, and frequency information alongside GPS location. Foreground-service logging supports measurement collection with the screen off."
+      ]
+    ],
+    "limit": "Device-exposed LTE/NR metrics depend on the handset and Android version. Continuous GPS and measurement logging increase battery use.",
+    "overview": "https://f2g-ecamobile.netlify.app/",
+    "repo": null,
+    "visual": {
+      "src": "assets/projects/eca-mobile-route.webp",
+      "width": 720,
+      "height": 1600,
+      "alt": "ECA Mobile drive-test screen with GPS map and radio measurement readout.",
+      "caption": "GPS route view with field measurements and quick traffic controls.",
+      "source": "https://f2g-ecamobile.netlify.app/"
+    }
+  },
+  {
+    "id": "portable-lab",
+    "title": "Portable Lab",
+    "category": "RAN",
+    "date": "2026",
+    "displayDate": "2023–2026",
+    "kind": "End-to-end LTE laboratory",
+    "role": "Project initiator & team lead · F2G Solutions",
+    "summary": "Build a portable end-to-end 4G lab with SMS, VoLTE, and custom CMAS and ETWS servers for public-warning testing.",
+    "stack": [
+      "srsRAN 4G",
+      "BladeRF",
+      "Open5GS",
+      "Kamailio",
+      "Docker",
+      "CMAS / ETWS"
+    ],
+    "details": [
+      [
+        "My role",
+        "I started the Portable Lab in 2023, then handed the project to my team and continued leading the work."
+      ],
+      [
+        "Deployment",
+        "We have deployed a 4G network with SMS and VoLTE, plus our own CMAS and ETWS servers."
+      ],
+      [
+        "System",
+        "An SDR-based LTE radio connects to containerized EPC and IMS services, with subscriber provisioning and commercial handsets."
+      ]
+    ],
+    "limit": "The documented radio configuration uses LTE Band 3 and SISO.",
+    "overview": "https://f2g-portablelab.netlify.app/",
+    "repo": null,
+    "visual": {
+      "src": "assets/projects/portable-lab-box.webp",
+      "width": 1103,
+      "height": 619,
+      "alt": "Portable LTE lab enclosure with an iPhone connected to the private network.",
+      "caption": "Portable lab enclosure and a handset connected to its LTE network.",
+      "source": "https://f2g-portablelab.netlify.app/"
+    },
+    "impact": "Provided more than 30 students with practical exposure to telecommunications features and call flows since 2024."
+  },
+  {
     "id": "dtlog",
     "title": "DTLog",
     "category": "Protocol",
@@ -19,7 +217,8 @@
     "result": "Connects campaign-level findings to individual procedures and their evidence. Decode caching supports repeated analysis without dissecting the same capture every time.",
     "limit": "NR frames can be decoded, but NR procedure segmentation is not implemented. Missing radio metrics are reported as unavailable rather than estimated. Source and capture sets are private.",
     "access": "Private repository · case study available here",
-    "repo": null
+    "repo": null,
+    "impact": "Used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia."
   },
   {
     "id": "site-insights",
@@ -41,29 +240,8 @@
     "result": "Generates client and internal relation workbooks and identifies added, removed, and changed parameters and relationships. An offline Windows package supports environments without a Python installation or runtime internet access.",
     "limit": "Configuration eligibility is evidence about the configured network, not proof that a handover succeeds over the air. Customer configurations and outputs are excluded from this portfolio.",
     "access": "Professional project · architecture summary",
-    "repo": null
-  },
-  {
-    "id": "cellular-analyzer",
-    "title": "Cellular Analyzer",
-    "category": "RAN",
-    "date": "2026-05-22",
-    "displayDate": "May 2026",
-    "kind": "Android application",
-    "summary": "Collect device-exposed LTE / NR measurements with GPS location, retain drive-test sessions, and export measurements for coverage analysis.",
-    "stack": [
-      "Kotlin",
-      "Jetpack Compose",
-      "Android telephony",
-      "GPS / CSV"
-    ],
-    "problem": "Radio measurements are more useful when they can be connected to where the device was and what it was doing, rather than read as isolated signal values.",
-    "built": "I developed an Android application using telephony APIs to collect available RSRP, RSRQ, SINR, PCI, cell identity, and frequency information alongside GPS location. Foreground-service logging supports measurement collection with the screen off.",
-    "decision": "Use device-exposed measurements and keep availability explicit. Local session storage and CSV export make measurements portable for later analysis instead of tying the data to one view.",
-    "result": "Combines route visualization, measurement logging, and export in a field-oriented application. The measurement stream can be correlated with drive-test routes during post-test coverage review.",
-    "limit": "Android measurement availability depends on the device, modem, and OS version. Device-exposed metrics do not replace a dedicated RF measurement instrument. The repository is private.",
-    "access": "Private repository · case study available here",
-    "repo": null
+    "repo": null,
+    "impact": "Used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich."
   },
   {
     "id": "lte-clustering",
