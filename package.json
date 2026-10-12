@@ -1,6 +1,6 @@
 {
   "name": "luis-geralda-portfolio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "type": "module",
   "scripts": { "build": "node build.mjs", "check": "node --check build.mjs && node --check site/app.js", "preview": "python -m http.server 4173 --bind 127.0.0.1 --directory site" }

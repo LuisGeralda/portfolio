@@ -2,7 +2,7 @@
 
 [Visit the live portfolio](https://luisgeralda.github.io/portfolio/)
 
-An engineering portfolio for interviews. Five projects appear in reverse chronological order by latest documented work. Static HTML works without JavaScript; JavaScript adds project filtering and theme selection.
+An engineering portfolio for interviews. Nine projects include individually developed tools and five projects led within the F2G Solutions team. Year-only team projects are grouped before month-dated entries from the same year; their month order is unspecified. Date ranges show October 2025 starts for the four software projects and a 2023 start for Portable Lab. ECA Mobile replaces the former Cellular Analyzer entry. Public product screenshots and a lab photo illustrate the five team projects. Static HTML works without JavaScript; JavaScript adds project filtering and theme selection.
 
 ## Preview
 
@@ -27,7 +27,7 @@ Alternatively, publish `site/` directly from a Pages branch. `.nojekyll` keeps t
 
 ## Edit
 
-- `projects.json`: case-study content, ISO sorting dates, public repository links.
+- `projects.json`: case-study content, ISO sorting dates, public repository and project overview links, and individual or team roles.
 - `build.mjs`: page structure, background, contact, and metadata.
 - `site/styles.css`: responsive Ink & Grid design, light/dark themes, print styling.
 - `site/app.js`: progressive interactions.
@@ -37,7 +37,7 @@ Run `npm run check` and `npm run build` after edits. Source and generated HTML a
 
 ## Content and access
 
-Project dates are latest documented activity, not original creation dates. Private repositories are described with public-facing case studies and have no inaccessible source-code CTA. The site contains no source code from those projects, customer captures, real measurement dashboards, or employer configuration exports. Project summaries and details focus on the implementation and limitations.
+Project dates are latest documented activity, not original creation dates. Private repositories are described with public-facing case studies and have no inaccessible source-code CTA. The site contains no source code from those projects, customer captures, real measurement dashboards, or employer configuration exports. Project summaries and details focus on the implementation and limitations. Adoption and training impact are supplied directly by Luis; the public overview pages are sources for product visuals and features.
 
 Typography uses Instrument Serif, Inter, and Geist Mono through Google Fonts, with system fallbacks. No commercial font files are redistributed. The resume contains the contact and employment information supplied by Luis for this portfolio.
 

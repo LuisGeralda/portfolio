@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.2.0] - 2026-10-12
+
+### Added
+
+- Visible project impact: Nokia/Apple internal use, Nokia drive-test engagements in the Middle East and Africa, and practical training for more than 30 students.
+
+- Team-led project entries: ECA, MOBIQ, Drive Test Dashboard, ECA Mobile, and Portable Lab, with public overview links.
+- Documentation screenshots and a Portable Lab photo with source links.
+- Visible team leadership attribution and an automation project filter.
+
+### Changed
+
+- Calculate RAN filter totals from project data.
+- Group year-only team entries without claiming an unverified month order, and show project start dates.
+- Merge Cellular Analyzer into ECA Mobile.
+- Describe the deployed Portable Lab SMS, VoLTE, and custom CMAS/ETWS services.
+
 ## [1.0.1.0] - 2026-10-12
 
 ### Changed
