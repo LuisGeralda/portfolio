@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.3.0] - 2026-10-12
+
+### Added
+
+- GitHub cluster map for LTE KPI clustering and the supplied DTLog campaign screenshot.
+
+### Fixed
+
+- Version stylesheet and script URLs by content to prevent stale assets after deployment.
+- Constrain project figures and captions to their grid cells, preserve image proportions, and space impact labels clearly.
+
 ## [1.0.2.0] - 2026-10-12
 
 ### Added

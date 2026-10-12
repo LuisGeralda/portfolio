@@ -2,7 +2,7 @@
 
 [Visit the live portfolio](https://luisgeralda.github.io/portfolio/)
 
-An engineering portfolio for interviews. Nine projects include individually developed tools and five projects led within the F2G Solutions team. Year-only team projects are grouped before month-dated entries from the same year; their month order is unspecified. Date ranges show October 2025 starts for the four software projects and a 2023 start for Portable Lab. ECA Mobile replaces the former Cellular Analyzer entry. Public product screenshots and a lab photo illustrate the five team projects. Static HTML works without JavaScript; JavaScript adds project filtering and theme selection.
+An engineering portfolio for interviews. Nine projects include individually developed tools and five projects led within the F2G Solutions team. Year-only team projects are grouped before month-dated entries from the same year; their month order is unspecified. Date ranges show October 2025 starts for the four software projects and a 2023 start for Portable Lab. ECA Mobile replaces the former Cellular Analyzer entry. Public product screenshots and a lab photo illustrate the five team projects. A GitHub cluster map and a user-supplied DTLog campaign screenshot illustrate two additional projects. Static HTML works without JavaScript; JavaScript adds project filtering and theme selection.
 
 ## Preview
 
@@ -33,7 +33,7 @@ Alternatively, publish `site/` directly from a Pages branch. `.nojekyll` keeps t
 - `site/app.js`: progressive interactions.
 - `site/assets/Luis-Geralda-Resume.pdf`: supplied September 2026 resume, copied unchanged.
 
-Run `npm run check` and `npm run build` after edits. Source and generated HTML are both retained for portability.
+Run `npm run check` and `npm run build` after edits. Builds version the stylesheet and script URLs by their content so deployed HTML loads matching assets. Source and generated HTML are both retained for portability.
 
 ## Content and access
 

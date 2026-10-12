@@ -39,8 +39,8 @@
 @media print{.project-main{grid-column:3/13}}
 
 .project-role{font-size:13px;margin-top:10px}.project-overview{display:inline-block;font-size:13px;margin-bottom:20px;text-underline-offset:4px}
-.project-impact{border-left:2px solid var(--signal);padding-left:16px;margin-top:20px;font-size:16px;line-height:1.65;max-width:60ch}.project-impact strong{display:block;font:500 10px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-.has-visual .project-main{grid-column:3/8}.project-visual{grid-column:9/13;align-self:start;margin:0}.project-visual img{display:block;width:100%;height:auto;max-height:400px;object-fit:contain;background:var(--paper2);border:1px solid var(--rule)}.project-visual figcaption{font-size:12px;line-height:1.6;color:var(--graphite);margin-top:12px}.project-visual figcaption a{white-space:nowrap}.project-visual>a{display:block}.project-overview:hover,.project-visual a:hover{text-decoration-thickness:2px}
-@media(max-width:1000px){.has-visual .project-main{grid-column:3/13}.project-visual{grid-column:3/13;max-width:650px}.project-visual img{max-height:480px}}
-@media(max-width:767px){.has-visual .project-main,.project-visual{grid-column:1/5}.project-visual img{max-height:420px}}
+.project-impact{border-left:2px solid var(--signal);padding-left:16px;margin-block:24px;font-size:16px;line-height:1.65;max-width:60ch}.project-impact strong{display:block;font:500 10px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.project>*{min-width:0}.has-visual .project-main{grid-column:3/8}.project-visual{grid-column:9/13;align-self:start;min-width:0;width:100%;margin:0}.project-visual img{display:block;width:100%;max-width:100%;height:auto;background:var(--paper2);border:1px solid var(--rule)}.project-visual figcaption{width:100%;font-size:12px;line-height:1.6;color:var(--graphite);margin-top:12px;overflow-wrap:break-word}.project-visual figcaption a{white-space:nowrap}.project-visual>a{display:block;width:100%}.project-visual.portrait{max-width:240px}.project-overview:hover,.project-visual a:hover{text-decoration-thickness:2px}
+@media(max-width:1000px){.has-visual .project-main{grid-column:3/13}.project-visual{grid-column:3/13;max-width:650px}.project-visual.portrait{max-width:240px}}
+@media(max-width:767px){.has-visual .project-main,.project-visual{grid-column:1/5}}
 @media print{.has-visual .project-main{grid-column:3/13}.project-visual{grid-column:3/13;max-width:440px}.project-visual img{max-height:240px}}
