@@ -10,7 +10,7 @@ function filterProjects(filter) {
   }
   for (const button of filterButtons) button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
   document.querySelector('#project-count').textContent = `${String(count).padStart(2,'0')} projects`;
-  document.querySelector('#filter-status').textContent = `${count} projects shown, ${filter === 'All' ? 'all disciplines' : filter}, newest first.`;
+  document.querySelector('#filter-status').textContent = `${count} projects shown, ${filter === 'All' ? 'all disciplines' : filter}, in impact order.`;
 }
 filterButtons.forEach(button => button.addEventListener('click', () => filterProjects(button.dataset.filter)));
 function openLinkedProject() {

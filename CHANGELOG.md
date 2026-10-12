@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.3.3] - 2026-10-12
+
+### Changed
+
+- Order projects by impact: Site Insights, ECA, DTLog, Portable Lab, then MOBIQ.
+- Mark Site Insights development as ongoing.
+- Explain MOBIQ command-framework ownership, team GUI contributions, six-UE testing, and overnight soak-test use.
+- Align visible ordering labels, accessible filter announcements, and README.
+
 ## [1.0.3.2] - 2026-10-12
 
 ### Changed

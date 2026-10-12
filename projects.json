@@ -1,5 +1,59 @@
 [
   {
+    "id": "site-insights",
+    "title": "Site Insights",
+    "category": "RAN",
+    "date": "2026",
+    "displayDate": "2026 · ongoing",
+    "kind": "Configuration analysis",
+    "summary": "I built Site Insights to replace manual site-by-site configuration review with cell inventories, mobility and CA / EN-DC relation tables, and configuration comparisons.",
+    "stack": [
+      "Python",
+      "lxml",
+      "pandas",
+      "openpyxl"
+    ],
+    "problem": "Nokia engineers had to manually inspect each eNB / gNB configuration to review settings and plan client updates or removals. Clients also needed current configuration inventories for planning, while engineers needed a way to identify changes between backups.",
+    "built": "I built a Python pipeline that parses SCF / XML managed objects into typed inventories, resolves source-to-target candidates, and evaluates handover, reselection, redirection, and EN-DC dependencies. The reporting pipeline also integrates LTE and NR FR1 standalone carrier-aggregation analysis.",
+    "decision": "Classify mobility candidates as OK, PARTIAL, NOT CONFIGURED, BLOCKED, or AMBIGUOUS, retaining reason summaries and source-object references. Treat redirection as carrier-based so multiple cells on one target carrier do not create false ambiguity.",
+    "result": "Produces client and internal Excel workbooks with cell information, mobility relationships, and CA / EN-DC configuration evidence. Daily backup comparisons identify configuration deltas; daily / weekly reports give clients current inventories for planning and engineers a history of configuration changes for troubleshooting. The documented Windows package runs without a separate Python installation or runtime internet connection.",
+    "limit": "Configuration eligibility is evidence about the configured network, not proof that a handover succeeds over the air. Customer configurations and outputs are excluded from this portfolio.",
+    "access": "Professional project · architecture summary",
+    "repo": null,
+    "impact": "Used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich. Daily / weekly configuration reports reduce manual preparation for client planning; backup comparisons support Nokia engineers in troubleshooting misconfigurations and tracking daily changes.",
+    "role": "Independent designer & developer",
+    "details": [
+      [
+        "Problem",
+        "Nokia engineers had to manually inspect each eNB / gNB configuration to review settings and plan client updates or removals. Clients also needed current configuration inventories for planning, while engineers needed a way to identify changes between backups."
+      ],
+      [
+        "My ownership",
+        "I independently designed and implemented the configuration-analysis and comparison tool to replace manual site-by-site inspection."
+      ],
+      [
+        "Implementation",
+        "I built a Python pipeline that parses SCF / XML managed objects into typed inventories, resolves source-to-target candidates, and evaluates handover, reselection, redirection, and EN-DC dependencies. The reporting pipeline also integrates LTE and NR FR1 standalone carrier-aggregation analysis."
+      ],
+      [
+        "Design decisions",
+        "Classify mobility candidates as OK, PARTIAL, NOT CONFIGURED, BLOCKED, or AMBIGUOUS, retaining reason summaries and source-object references. Treat redirection as carrier-based so multiple cells on one target carrier do not create false ambiguity."
+      ],
+      [
+        "Verification",
+        "The existing 99-test suite passed on an isolated copy during this portfolio review. Synthetic fixtures exercise missing measurement objects, disabled features, ambiguous targets, EN-DC dependencies, workbook generation, and XML / Excel comparisons."
+      ],
+      [
+        "Operational workflow",
+        "The tool is used in a daily configuration-backup workflow. Comparing XML snapshots or generated inventories reveals added, removed, and changed configurations. Daily / weekly reports let clients plan from current configurations and help engineers review changes alongside troubleshooting."
+      ],
+      [
+        "Output",
+        "A concise client workbook presents configuration inventories and relations; a detailed internal workbook retains dependency decisions and parameter-level troubleshooting. The documented offline Windows package supports environments without a separate Python installation or runtime internet connection."
+      ]
+    ]
+  },
+  {
     "id": "eca",
     "title": "Extended Cellular Analyzer (ECA)",
     "category": "Protocol",
@@ -50,14 +104,90 @@
     "impact": "Supports Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia, with a collection-to-reporting workflow for teams whose access to commercial diagnostic licenses is not always guaranteed."
   },
   {
+    "id": "dtlog",
+    "title": "DTLog",
+    "category": "Protocol",
+    "date": "2026-09-04",
+    "displayDate": "Sep 2026",
+    "kind": "Desktop + web application",
+    "summary": "I designed and implemented DTLog end to end to analyze multiple drive-test captures and calculate campaign KPIs and success rates from procedure counters.",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "React",
+      "TShark"
+    ],
+    "problem": "Field and network-performance teams need KPI feedback while still at the drive-test site. Sending dozens of large captures to an R&D location delays analysis. Repeated messages and incomplete procedures also make raw message counts unreliable.",
+    "built": "I designed and implemented the capture-ingestion workflow, decoder and procedure-analysis engine, FastAPI / React dashboard, and Excel reporting. The engine uses retransmission deduplication, state-machine detection, and decoded cause codes.",
+    "decision": "Give each signaling event one procedure owner. Pool KPI numerators and denominators before calculating rates. Keep indeterminate outcomes separate from observed failures, and show counts when samples are too small for a useful percentage.",
+    "result": "Provides campaign-level KPI feedback at the drive-test site and connects findings to individual procedures and their evidence. Decode caching supports repeated analysis without dissecting the same capture again.",
+    "limit": "NR frames can be decoded, but NR procedure segmentation is not implemented. Missing radio metrics are reported as unavailable rather than estimated. Source and capture sets are private.",
+    "access": "Private repository · case study available here",
+    "repo": null,
+    "impact": "Gives field-test and network-performance teams KPI feedback at the drive-test site without first transferring dozens of large captures to R&D for analysis. Used in Nokia engagements across the Middle East and Africa, particularly Ethiopia.",
+    "visual": {
+      "src": "assets/projects/dtlog-campaign.webp",
+      "width": 1600,
+      "height": 1029,
+      "alt": "DTLog campaign view showing pooled capture totals and an RSRP coverage distribution.",
+      "caption": "Campaign totals and coverage distribution across UE baseband log captures.",
+      "source": null
+    },
+    "role": "End-to-end designer & developer"
+  },
+  {
+    "id": "portable-lab",
+    "title": "Portable Lab",
+    "category": "RAN",
+    "date": "2026",
+    "displayDate": "2023–2026",
+    "kind": "End-to-end LTE laboratory",
+    "role": "Project initiator & team lead · F2G Solutions",
+    "summary": "Build a portable end-to-end 4G lab with SMS, VoLTE, and custom CMAS and ETWS servers for public-warning testing.",
+    "stack": [
+      "srsRAN 4G",
+      "BladeRF",
+      "Open5GS",
+      "Kamailio",
+      "Docker",
+      "CMAS / ETWS"
+    ],
+    "details": [
+      [
+        "My role",
+        "I started the Portable Lab in 2023, then handed the project to my team and continued leading the work."
+      ],
+      [
+        "Deployment",
+        "We have deployed a 4G network with SMS and VoLTE, plus our own CMAS and ETWS servers."
+      ],
+      [
+        "System",
+        "An SDR-based LTE radio connects to containerized EPC and IMS services, with subscriber provisioning and commercial handsets."
+      ]
+    ],
+    "limit": "The documented radio configuration uses LTE Band 3 and SISO.",
+    "overview": "https://f2g-portablelab.netlify.app/",
+    "repo": null,
+    "visual": {
+      "src": "assets/projects/portable-lab-box.webp",
+      "width": 1103,
+      "height": 619,
+      "alt": "Portable LTE lab enclosure with an iPhone connected to the private network.",
+      "caption": "Portable lab enclosure and a handset connected to its LTE network.",
+      "source": "https://f2g-portablelab.netlify.app/"
+    },
+    "impact": "Provided more than 30 students with practical exposure to telecommunications features and call flows since 2024."
+  },
+  {
     "id": "mobiq",
     "title": "MOBIQ",
     "category": "Automation",
     "date": "2026",
     "displayDate": "Oct 2025–2026",
     "kind": "Test automation platform",
-    "role": "Team lead · F2G Solutions",
-    "summary": "Coordinate Android devices and run repeatable telecom test campaigns through reusable modules and visual workflows.",
+    "role": "ADB framework developer & team lead · F2G Solutions",
+    "summary": "I built MOBIQ’s ADB command foundation to make log-collection campaigns repeatable. My team added a drag-and-drop interface and reusable workflow modules.",
     "stack": [
       "Python",
       "ADB",
@@ -65,12 +195,24 @@
     ],
     "details": [
       [
-        "Role",
-        "I led this project within my team. Development started in October 2025 and continued in 2026."
+        "Problem",
+        "Manual attach / detach, calls, SMS, and browsing actions introduce operator variability and human error during log-collection campaigns. Teams need repeatable test sequences without writing device commands for every campaign."
+      ],
+      [
+        "My ownership",
+        "I established the ADB automation framework by finding, curating, and organizing commands for attach / detach, calls, SMS, and browsing. These commands became the foundation for reusable test actions."
+      ],
+      [
+        "Team contribution",
+        "After I built the command foundation, my team developed the GUI and workflow modules. Test teams assemble actions in a simple drag-and-drop format without creating new commands for each workflow."
+      ],
+      [
+        "Use & scale",
+        "Up to six UEs were tested simultaneously. The framework is also used to run repeatable overnight soak-test workflows."
       ],
       [
         "Project scope",
-        "RF logging, airplane-mode actions, data and network checks, multi-device orchestration, execution retries, and report exports."
+        "Reusable device actions, RF logging, multi-device orchestration, execution retries, and report exports support log-collection campaigns."
       ]
     ],
     "limit": "Requires Android devices connected through ADB. Campaign execution depends on device connectivity and the configured test modules.",
@@ -84,7 +226,7 @@
       "caption": "Reusable workflows combine device actions into repeatable test sequences.",
       "source": "https://landing-page-mobiq.netlify.app/"
     },
-    "impact": "Used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia."
+    "impact": "Tested with up to six UEs simultaneously and used for overnight soak tests. Repeatable workflows reduce manual actions and operator variability during log collection. Used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia."
   },
   {
     "id": "drive-test-dashboard",
@@ -164,136 +306,6 @@
       "caption": "GPS route view with field measurements and quick traffic controls.",
       "source": "https://f2g-ecamobile.netlify.app/"
     }
-  },
-  {
-    "id": "portable-lab",
-    "title": "Portable Lab",
-    "category": "RAN",
-    "date": "2026",
-    "displayDate": "2023–2026",
-    "kind": "End-to-end LTE laboratory",
-    "role": "Project initiator & team lead · F2G Solutions",
-    "summary": "Build a portable end-to-end 4G lab with SMS, VoLTE, and custom CMAS and ETWS servers for public-warning testing.",
-    "stack": [
-      "srsRAN 4G",
-      "BladeRF",
-      "Open5GS",
-      "Kamailio",
-      "Docker",
-      "CMAS / ETWS"
-    ],
-    "details": [
-      [
-        "My role",
-        "I started the Portable Lab in 2023, then handed the project to my team and continued leading the work."
-      ],
-      [
-        "Deployment",
-        "We have deployed a 4G network with SMS and VoLTE, plus our own CMAS and ETWS servers."
-      ],
-      [
-        "System",
-        "An SDR-based LTE radio connects to containerized EPC and IMS services, with subscriber provisioning and commercial handsets."
-      ]
-    ],
-    "limit": "The documented radio configuration uses LTE Band 3 and SISO.",
-    "overview": "https://f2g-portablelab.netlify.app/",
-    "repo": null,
-    "visual": {
-      "src": "assets/projects/portable-lab-box.webp",
-      "width": 1103,
-      "height": 619,
-      "alt": "Portable LTE lab enclosure with an iPhone connected to the private network.",
-      "caption": "Portable lab enclosure and a handset connected to its LTE network.",
-      "source": "https://f2g-portablelab.netlify.app/"
-    },
-    "impact": "Provided more than 30 students with practical exposure to telecommunications features and call flows since 2024."
-  },
-  {
-    "id": "dtlog",
-    "title": "DTLog",
-    "category": "Protocol",
-    "date": "2026-09-04",
-    "displayDate": "Sep 2026",
-    "kind": "Desktop + web application",
-    "summary": "I designed and implemented DTLog end to end to analyze multiple drive-test captures and calculate campaign KPIs and success rates from procedure counters.",
-    "stack": [
-      "Python",
-      "FastAPI",
-      "React",
-      "TShark"
-    ],
-    "problem": "Field and network-performance teams need KPI feedback while still at the drive-test site. Sending dozens of large captures to an R&D location delays analysis. Repeated messages and incomplete procedures also make raw message counts unreliable.",
-    "built": "I designed and implemented the capture-ingestion workflow, decoder and procedure-analysis engine, FastAPI / React dashboard, and Excel reporting. The engine uses retransmission deduplication, state-machine detection, and decoded cause codes.",
-    "decision": "Give each signaling event one procedure owner. Pool KPI numerators and denominators before calculating rates. Keep indeterminate outcomes separate from observed failures, and show counts when samples are too small for a useful percentage.",
-    "result": "Provides campaign-level KPI feedback at the drive-test site and connects findings to individual procedures and their evidence. Decode caching supports repeated analysis without dissecting the same capture again.",
-    "limit": "NR frames can be decoded, but NR procedure segmentation is not implemented. Missing radio metrics are reported as unavailable rather than estimated. Source and capture sets are private.",
-    "access": "Private repository · case study available here",
-    "repo": null,
-    "impact": "Gives field-test and network-performance teams KPI feedback at the drive-test site without first transferring dozens of large captures to R&D for analysis. Used in Nokia engagements across the Middle East and Africa, particularly Ethiopia.",
-    "visual": {
-      "src": "assets/projects/dtlog-campaign.webp",
-      "width": 1600,
-      "height": 1029,
-      "alt": "DTLog campaign view showing pooled capture totals and an RSRP coverage distribution.",
-      "caption": "Campaign totals and coverage distribution across UE baseband log captures.",
-      "source": null
-    },
-    "role": "End-to-end designer & developer"
-  },
-  {
-    "id": "site-insights",
-    "title": "Site Insights",
-    "category": "RAN",
-    "date": "2026-06-23",
-    "displayDate": "Jun 2026",
-    "kind": "Configuration analysis",
-    "summary": "I built Site Insights to replace manual site-by-site configuration review with cell inventories, mobility and CA / EN-DC relation tables, and configuration comparisons.",
-    "stack": [
-      "Python",
-      "lxml",
-      "pandas",
-      "openpyxl"
-    ],
-    "problem": "Nokia engineers had to manually inspect each eNB / gNB configuration to review settings and plan client updates or removals. Clients also needed current configuration inventories for planning, while engineers needed a way to identify changes between backups.",
-    "built": "I built a Python pipeline that parses SCF / XML managed objects into typed inventories, resolves source-to-target candidates, and evaluates handover, reselection, redirection, and EN-DC dependencies. The reporting pipeline also integrates LTE and NR FR1 standalone carrier-aggregation analysis.",
-    "decision": "Classify mobility candidates as OK, PARTIAL, NOT CONFIGURED, BLOCKED, or AMBIGUOUS, retaining reason summaries and source-object references. Treat redirection as carrier-based so multiple cells on one target carrier do not create false ambiguity.",
-    "result": "Produces client and internal Excel workbooks with cell information, mobility relationships, and CA / EN-DC configuration evidence. Daily backup comparisons identify configuration deltas; daily / weekly reports give clients current inventories for planning and engineers a history of configuration changes for troubleshooting. The documented Windows package runs without a separate Python installation or runtime internet connection.",
-    "limit": "Configuration eligibility is evidence about the configured network, not proof that a handover succeeds over the air. Customer configurations and outputs are excluded from this portfolio.",
-    "access": "Professional project · architecture summary",
-    "repo": null,
-    "impact": "Used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich. Daily / weekly configuration reports reduce manual preparation for client planning; backup comparisons support Nokia engineers in troubleshooting misconfigurations and tracking daily changes.",
-    "role": "Independent designer & developer",
-    "details": [
-      [
-        "Problem",
-        "Nokia engineers had to manually inspect each eNB / gNB configuration to review settings and plan client updates or removals. Clients also needed current configuration inventories for planning, while engineers needed a way to identify changes between backups."
-      ],
-      [
-        "My ownership",
-        "I independently designed and implemented the configuration-analysis and comparison tool to replace manual site-by-site inspection."
-      ],
-      [
-        "Implementation",
-        "I built a Python pipeline that parses SCF / XML managed objects into typed inventories, resolves source-to-target candidates, and evaluates handover, reselection, redirection, and EN-DC dependencies. The reporting pipeline also integrates LTE and NR FR1 standalone carrier-aggregation analysis."
-      ],
-      [
-        "Design decisions",
-        "Classify mobility candidates as OK, PARTIAL, NOT CONFIGURED, BLOCKED, or AMBIGUOUS, retaining reason summaries and source-object references. Treat redirection as carrier-based so multiple cells on one target carrier do not create false ambiguity."
-      ],
-      [
-        "Verification",
-        "The existing 99-test suite passed on an isolated copy during this portfolio review. Synthetic fixtures exercise missing measurement objects, disabled features, ambiguous targets, EN-DC dependencies, workbook generation, and XML / Excel comparisons."
-      ],
-      [
-        "Operational workflow",
-        "The tool is used in a daily configuration-backup workflow. Comparing XML snapshots or generated inventories reveals added, removed, and changed configurations. Daily / weekly reports let clients plan from current configurations and help engineers review changes alongside troubleshooting."
-      ],
-      [
-        "Output",
-        "A concise client workbook presents configuration inventories and relations; a detailed internal workbook retains dependency decisions and parameter-level troubleshooting. The documented offline Windows package supports environments without a separate Python installation or runtime internet connection."
-      ]
-    ]
   },
   {
     "id": "lte-clustering",

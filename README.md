@@ -14,11 +14,11 @@ I enhance my software development workflow with models such as **Opus 5.5** and 
 
 ## Projects and impact
 
-- **Site Insights — independent design and implementation:** I replaced manual site-by-site configuration inspection with cell inventories, mobility and CA/EN-DC relation reports, and snapshot comparisons. Used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich, it supports daily backups, daily/weekly planning reports, and misconfiguration troubleshooting.
+- **Site Insights — ongoing independent design and implementation:** I replaced manual site-by-site configuration inspection with cell inventories, mobility and CA/EN-DC relation reports, and snapshot comparisons. Used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich, it supports daily backups, daily/weekly planning reports, and misconfiguration troubleshooting.
 - **ECA — solution architecture and team leadership:** I structured the application around collection, conversion, analysis, and reporting for test teams with limited access to commercial diagnostic licenses. Building on open-source DIAG decoding, I implemented new event parsers and custom .qdss decoding logic.
 - **DTLog — end-to-end design and implementation:** I built campaign capture ingestion, procedure analysis, KPI and success-rate calculations, the dashboard, and reporting. Field teams get feedback at the drive-test site without first transferring large capture sets to R&D.
-- **MOBIQ — team leadership:** reusable device workflows and telecom test orchestration. ECA, MOBIQ, and DTLog are used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia.
 - **Portable Lab:** I started this project in 2023, then handed it to my team. We deployed 4G with SMS, VoLTE, and custom CMAS/ETWS servers. Since 2024, it has given more than 30 students practical exposure to telecom features and call flows.
+- **MOBIQ — ADB framework development and team leadership:** I curated commands for attach/detach, calls, SMS, and browsing to reduce manual actions and operator variability during log collection. My team built the GUI and drag-and-drop workflow modules on that foundation. Tested with up to six UEs simultaneously and used for overnight soak tests. ECA, MOBIQ, and DTLog are used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia.
 - **ECA Mobile and Drive Test Dashboard:** team projects for field measurements, route mapping, connectivity testing, and KPI review.
 - **LTE KPI clustering and CNN QAM denoising:** research connecting telecommunications, signal processing, and machine learning.
 
