@@ -218,7 +218,15 @@
     "limit": "NR frames can be decoded, but NR procedure segmentation is not implemented. Missing radio metrics are reported as unavailable rather than estimated. Source and capture sets are private.",
     "access": "Private repository · case study available here",
     "repo": null,
-    "impact": "Used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia."
+    "impact": "Used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia.",
+    "visual": {
+      "src": "assets/projects/dtlog-campaign.webp",
+      "width": 1600,
+      "height": 1029,
+      "alt": "DTLog campaign view showing pooled capture totals and an RSRP coverage distribution.",
+      "caption": "Campaign totals and coverage distribution across UE baseband log captures.",
+      "source": null
+    }
   },
   {
     "id": "site-insights",
@@ -263,7 +271,15 @@
     "result": "Identified coverage and cell-edge performance gaps and used them to recommend parameter changes in a proof of concept.",
     "limit": "This is an exploratory proof of concept. Its findings depend on the dataset and feature selection and should be validated through additional measurements before deployment.",
     "access": "Public repository",
-    "repo": "https://github.com/LuisGeralda/LTE-KPI-Kmeans-Clustering"
+    "repo": "https://github.com/LuisGeralda/LTE-KPI-Kmeans-Clustering",
+    "visual": {
+      "src": "assets/projects/lte-kmeans-map.webp",
+      "width": 2490,
+      "height": 1269,
+      "alt": "LTE measurement cluster map of Ireland with four cluster labels.",
+      "caption": "LTE KPI cluster map from the project repository.",
+      "source": "https://github.com/LuisGeralda/LTE-KPI-Kmeans-Clustering/blob/main/Clusters%20output.PNG"
+    }
   },
   {
     "id": "qam-denoiser",

@@ -1,46 +1,27 @@
-# Luis Geralda portfolio
+# Luis Geralda
 
-[Visit the live portfolio](https://luisgeralda.github.io/portfolio/)
+I’m a 5G/LTE RAN engineer and software developer with 5+ years of experience in radio network validation, core integration, and UE interoperability. I work across the radio, the protocol stack, and the software used to test them.
 
-An engineering portfolio for interviews. Nine projects include individually developed tools and five projects led within the F2G Solutions team. Year-only team projects are grouped before month-dated entries from the same year; their month order is unspecified. Date ranges show October 2025 starts for the four software projects and a 2023 start for Portable Lab. ECA Mobile replaces the former Cellular Analyzer entry. Public product screenshots and a lab photo illustrate the five team projects. Static HTML works without JavaScript; JavaScript adds project filtering and theme selection.
+[Explore my portfolio](https://luisgeralda.github.io/portfolio/) · [LinkedIn](https://www.linkedin.com/in/luisgeralda/) · [Resume](site/assets/Luis-Geralda-Resume.pdf)
 
-## Preview
+## Telecom validation and software development
 
-Requires Node.js 22 and Python 3.
+My telecommunications work covers LTE and NR NSA/SA, mobility, interoperability, RRC/NAS troubleshooting, and end-to-end network integration. At Corning, ex-SpiderCloud Wireless, I owned four OTA networks and supported validation across a 50-device test fleet. I now work with Nokia North America through F2G Solutions on Apple test networks.
 
-```text
-npm run build
-npm run preview
-```
+I turn that experience into software: Python analysis and automation tools, FastAPI/React applications, Android measurement apps, and browser-based dashboards. My background combines electrical engineering technology with a master’s in software engineering and an AI concentration.
 
-Open http://127.0.0.1:4173. There are no npm dependencies to install.
+I enhance my software development workflow with models such as **Opus 5.5** and **Sol6.1**. My domain knowledge guides the work, and I remain responsible for the implementation, validation, and engineering decisions.
 
-## Publish on GitHub Pages
+## Projects and impact
 
-1. Create a repository under `LuisGeralda`, such as `portfolio`, and upload the contents of this folder. Use `main` as the default branch.
-2. In the repository's **Settings → Pages → Build and deployment**, select **GitHub Actions**.
-3. Run the **Publish portfolio** workflow, or push to `main`. Its deployment result supplies the final URL.
+- **Site Insights:** configuration-analysis software used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich.
+- **ECA, MOBIQ, and DTLog:** cellular analysis, device orchestration, and UE baseband log analysis used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia.
+- **Portable Lab:** I started this project in 2023, then handed it to my team. We deployed 4G with SMS, VoLTE, and custom CMAS/ETWS servers. Since 2024, it has given more than 30 students practical exposure to telecom features and call flows.
+- **ECA Mobile and Drive Test Dashboard:** team projects for field measurements, route mapping, connectivity testing, and KPI review.
+- **LTE KPI clustering and CNN QAM denoising:** research connecting telecommunications, signal processing, and machine learning.
 
-This repository publishes at `https://luisgeralda.github.io/portfolio/`. A repository named `LuisGeralda.github.io` would publish at the account root. All local asset paths are relative and support either layout.
+The portfolio distinguishes my individual software work from projects I led within my team, and includes project details, visuals, and limitations.
 
-Alternatively, publish `site/` directly from a Pages branch. `.nojekyll` keeps the static output unprocessed.
+## Contact
 
-## Edit
-
-- `projects.json`: case-study content, ISO sorting dates, public repository and project overview links, and individual or team roles.
-- `build.mjs`: page structure, background, contact, and metadata.
-- `site/styles.css`: responsive Ink & Grid design, light/dark themes, print styling.
-- `site/app.js`: progressive interactions.
-- `site/assets/Luis-Geralda-Resume.pdf`: supplied September 2026 resume, copied unchanged.
-
-Run `npm run check` and `npm run build` after edits. Source and generated HTML are both retained for portability.
-
-## Content and access
-
-Project dates are latest documented activity, not original creation dates. Private repositories are described with public-facing case studies and have no inaccessible source-code CTA. The site contains no source code from those projects, customer captures, real measurement dashboards, or employer configuration exports. Project summaries and details focus on the implementation and limitations. Adoption and training impact are supplied directly by Luis; the public overview pages are sources for product visuals and features.
-
-Typography uses Instrument Serif, Inter, and Geist Mono through Google Fonts, with system fallbacks. No commercial font files are redistributed. The resume contains the contact and employment information supplied by Luis for this portfolio.
-
-## Verification
-
-See the separate `output/verification.md` in the task workspace for browser checks and screenshots. Those review artifacts are not part of the Pages upload.
+[geraldaolivier@gmail.com](mailto:geraldaolivier@gmail.com) · [GitHub](https://github.com/LuisGeralda) · [LinkedIn](https://www.linkedin.com/in/luisgeralda/)
