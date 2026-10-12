@@ -39,3 +39,26 @@ themeButton.addEventListener('click', () => {
   setTheme(theme);
   try { localStorage.setItem('portfolio-theme', theme); } catch {}
 });
+
+const broadcastFigure = document.querySelector('.broadcast-figure');
+const broadcastButton = document.querySelector('#broadcast-toggle');
+if (broadcastFigure && broadcastButton) {
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = false;
+  let visible = false;
+  const updateBroadcast = () => {
+    broadcastFigure.dataset.running = String(visible && !paused && !reducedMotion.matches && !document.hidden);
+    broadcastButton.setAttribute('aria-pressed', String(paused));
+    broadcastButton.setAttribute('aria-label', `${paused ? 'Resume' : 'Pause'} broadcasting animation`);
+    broadcastButton.textContent = paused ? 'Resume' : 'Pause';
+    broadcastButton.hidden = reducedMotion.matches;
+  };
+  broadcastButton.addEventListener('click', () => { paused = !paused; updateBroadcast(); });
+  new IntersectionObserver(entries => {
+    visible = entries[entries.length - 1].isIntersecting;
+    updateBroadcast();
+  }).observe(broadcastFigure);
+  reducedMotion.addEventListener('change', updateBroadcast);
+  document.addEventListener('visibilitychange', updateBroadcast);
+  updateBroadcast();
+}

@@ -4,6 +4,9 @@
 
 ### Added
 
+- Personal README focused on telecom validation, software development, AI-assisted work, and project impact.
+- Small radio tower illustration with broadcasting waves, pause control, and reduced-motion support.
+
 - GitHub cluster map for LTE KPI clustering and the supplied DTLog campaign screenshot.
 
 ### Fixed
