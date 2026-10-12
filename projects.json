@@ -235,7 +235,7 @@
     "date": "2026-06-23",
     "displayDate": "Jun 2026",
     "kind": "Configuration analysis",
-    "summary": "Transform Nokia SCF / XML configurations into LTE and NR inventories, mobility relation matrices, carrier-aggregation checks, and snapshot comparisons.",
+    "summary": "Check Nokia LTE / NR configurations for mobility readiness, explain missing or blocked dependencies, and compare configuration revisions in Excel reports.",
     "stack": [
       "Python",
       "lxml",
@@ -243,13 +243,36 @@
       "openpyxl"
     ],
     "problem": "A configured neighbor does not guarantee a usable mobility path. Feature flags, measurements, target dependencies, and cell relationships need to be checked together.",
-    "built": "I independently developed configuration-analysis automation for weekly LTE / NR inventories and repeatable lab reviews. The tools inspect intra-frequency, inter-frequency, and inter-RAT mobility, reselection, redirection, and carrier aggregation.",
-    "decision": "Separate successful paths from blocked or incomplete configurations. Preserve the reasons behind each decision, and compare both XML snapshots and generated inventories to expose changes.",
-    "result": "Generates client and internal relation workbooks and identifies added, removed, and changed parameters and relationships. An offline Windows package supports environments without a Python installation or runtime internet access.",
+    "built": "I built a Python pipeline that parses SCF / XML managed objects into typed inventories, resolves source-to-target candidates, and evaluates handover, reselection, redirection, and EN-DC dependencies. The reporting pipeline also integrates LTE and NR FR1 standalone carrier-aggregation analysis.",
+    "decision": "Classify mobility candidates as OK, PARTIAL, NOT CONFIGURED, BLOCKED, or AMBIGUOUS, retaining reason summaries and source-object references. Treat redirection as carrier-based so multiple cells on one target carrier do not create false ambiguity.",
+    "result": "Produce a concise client workbook and a detailed internal workbook with parameter-level troubleshooting. Compare XML snapshots or Excel inventories to identify added, removed, and changed configurations. The documented Windows package runs without a separate Python installation or runtime internet connection.",
     "limit": "Configuration eligibility is evidence about the configured network, not proof that a handover succeeds over the air. Customer configurations and outputs are excluded from this portfolio.",
     "access": "Professional project · architecture summary",
     "repo": null,
-    "impact": "Used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich."
+    "impact": "Used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich.",
+    "role": "Independent developer",
+    "details": [
+      [
+        "Problem",
+        "A configured neighbor does not guarantee a usable mobility path. Feature flags, measurements, target dependencies, and cell relationships need to be checked together."
+      ],
+      [
+        "Implementation",
+        "I built a Python pipeline that parses SCF / XML managed objects into typed inventories, resolves source-to-target candidates, and evaluates handover, reselection, redirection, and EN-DC dependencies. The reporting pipeline also integrates LTE and NR FR1 standalone carrier-aggregation analysis."
+      ],
+      [
+        "Design decisions",
+        "Classify mobility candidates as OK, PARTIAL, NOT CONFIGURED, BLOCKED, or AMBIGUOUS, retaining reason summaries and source-object references. Treat redirection as carrier-based so multiple cells on one target carrier do not create false ambiguity."
+      ],
+      [
+        "Verification",
+        "The existing 99-test suite passed on an isolated copy during this portfolio review. Synthetic fixtures exercise missing measurement objects, disabled features, ambiguous targets, EN-DC dependencies, workbook generation, and XML / Excel comparisons."
+      ],
+      [
+        "Output",
+        "Produce a concise client workbook and a detailed internal workbook with parameter-level troubleshooting. Compare XML snapshots or Excel inventories to identify added, removed, and changed configurations. The documented Windows package runs without a separate Python installation or runtime internet connection."
+      ]
+    ]
   },
   {
     "id": "lte-clustering",

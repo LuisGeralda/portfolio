@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.3.1] - 2026-10-12
+
+### Changed
+
+- Refine the tower with aligned sector antennas, monochrome broadcasting waves, a small tree landscape, and no visible title.
+- Ground Site Insights in its implementation: candidate decisions, dependency checks, internal/client reports, snapshot comparisons, and offline packaging.
+- Add evidence from 99 passing synthetic-fixture tests without exposing customer configuration or private source.
+
 ## [1.0.3.0] - 2026-10-12
 
 ### Added
