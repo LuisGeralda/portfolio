@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.3.2] - 2026-10-12
+
+### Changed
+
+- Make ECA architecture, event-parser contributions, and custom .qdss decoding ownership explicit, with open-source attribution.
+- Describe DTLog end-to-end ownership and on-site campaign KPI feedback.
+- Connect Site Insights ownership to manual-review replacement, client planning reports, and daily backup comparisons.
+- Align the personal README with these contributions and operational benefits.
+
 ## [1.0.3.1] - 2026-10-12
 
 ### Changed
