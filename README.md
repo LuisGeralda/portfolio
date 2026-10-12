@@ -14,8 +14,10 @@ I enhance my software development workflow with models such as **Opus 5.5** and 
 
 ## Projects and impact
 
-- **Site Insights:** configuration-analysis software used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich.
-- **ECA, MOBIQ, and DTLog:** cellular analysis, device orchestration, and UE baseband log analysis used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia.
+- **Site Insights — independent design and implementation:** I replaced manual site-by-site configuration inspection with cell inventories, mobility and CA/EN-DC relation reports, and snapshot comparisons. Used internally at Nokia with Apple’s wireless team in Cupertino, Sunnyvale, and Munich, it supports daily backups, daily/weekly planning reports, and misconfiguration troubleshooting.
+- **ECA — solution architecture and team leadership:** I structured the application around collection, conversion, analysis, and reporting for test teams with limited access to commercial diagnostic licenses. Building on open-source DIAG decoding, I implemented new event parsers and custom .qdss decoding logic.
+- **DTLog — end-to-end design and implementation:** I built campaign capture ingestion, procedure analysis, KPI and success-rate calculations, the dashboard, and reporting. Field teams get feedback at the drive-test site without first transferring large capture sets to R&D.
+- **MOBIQ — team leadership:** reusable device workflows and telecom test orchestration. ECA, MOBIQ, and DTLog are used in Nokia drive-test engagements across the Middle East and Africa, particularly Ethiopia.
 - **Portable Lab:** I started this project in 2023, then handed it to my team. We deployed 4G with SMS, VoLTE, and custom CMAS/ETWS servers. Since 2024, it has given more than 30 students practical exposure to telecom features and call flows.
 - **ECA Mobile and Drive Test Dashboard:** team projects for field measurements, route mapping, connectivity testing, and KPI review.
 - **LTE KPI clustering and CNN QAM denoising:** research connecting telecommunications, signal processing, and machine learning.
